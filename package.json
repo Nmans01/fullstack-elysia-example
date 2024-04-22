@@ -1,15 +1,23 @@
 {
-  "name": "natavo",
+  "name": "fullstack-elysia-example",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "concurrently \"bun run tw \" \"bun run --watch src/index.ts\" ",
+    "tw": "bun x --bun tailwindcss -i ./base.css -o ./public/css/styles.css --watch"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/html": "^1.0.2",
+    "@prisma/client": "5.12.1",
+    "elysia": "latest",
+    "prisma": "^5.12.1",
+    "typed-htmx": "^0.2.1"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "concurrently": "^8.2.2",
+    "daisyui": "^4.10.1",
+    "tailwindcss": "^3.4.3"
   },
   "module": "src/index.js"
 }
